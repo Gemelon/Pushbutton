@@ -254,7 +254,7 @@ void Pushbutton::port(byte Port){
  * 
  * -------------------------------------------------------------------------
  * 
- * void callBack(
+ * void pushbuttoncallBack(
  *    void (*PushbuttonCallBack)(byte))
  *    
  ---------------------------------------------------------------------------*/

@@ -79,7 +79,7 @@ public:
   // Intervallzeit einstellen
   void holdIntervalTime(int Time);
 
-  // Speichert den Zeiger auf die Callback funktion
+  // Speichert den Zeiger auf die PushbuttonCallBack funktion
   void pushbuttoncallBack(void (*PushbuttonCallBack)(byte));
 
   // Initialisierung
