@@ -9,8 +9,8 @@ byte ButtonState2;
 void setup() {
   Serial.begin(9600);
 
-  button1.begin(8, 1000, 500);
-  button2.begin(9, 1000, 500);
+  button1.begin(8, PullDown, 1000, 500);
+  button2.begin(9, PullDown, 1000, 500);
 
   Serial.println ("**********************************************");
   Serial.println ("*                TwoButton test              *");

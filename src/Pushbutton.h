@@ -12,6 +12,9 @@
 #define ButtonStateHold     2
 #define ButtonStateInterval 3
 
+#define PullUp              0
+#define PullDown            1
+
 class Pushbutton{
 private:
   // -------------------------------------------------------------------------------------------------------------------
@@ -31,6 +34,9 @@ private:
   // Die Zeit als der Taster nach Low gewechselt hat
   long _PushbuttonLowTime;
 
+  // Gibt an ob ein PullUp oder ein PullDown Widerstand verwendet wird
+  byte _PullUpDown = PullUp;
+  
   // Die Entprellzeit für den Taster
   int _PushbuttonDebounceTime = Debouncetime;
   
@@ -53,14 +59,14 @@ public:
   //--------------------------------------------------------------------------------------------------------------------
   
   Pushbutton();
-  Pushbutton(byte Port);
-  Pushbutton(byte Port, int HoldTime);
-  Pushbutton(byte Port, int HoldTime, int HoldIntervalTime);
-  Pushbutton(byte Port, int HoldTime, int HoldIntervalTime, int DebounceTimeervalTime);
-  Pushbutton(byte Port, void (*PushbuttonCallBack)(byte));
-  Pushbutton(byte Port, void (*PushbuttonCallBack)(byte), int HoldTime);
-  Pushbutton(byte Port, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime);
-  Pushbutton(byte Port, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime, int DebounceTimeervalTime);
+  Pushbutton(byte Port, byte PullUpDown);
+  Pushbutton(byte Port, byte PullUpDown, int HoldTime);
+  Pushbutton(byte Port, byte PullUpDown, int HoldTime, int HoldIntervalTime);
+  Pushbutton(byte Port, byte PullUpDown, int HoldTime, int HoldIntervalTime, int DebounceTime);
+  Pushbutton(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte));
+  Pushbutton(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte), int HoldTime);
+  Pushbutton(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime);
+  Pushbutton(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime, int DebounceTime);
 
   // -------------------------------------------------------------------------------------------------------------------
   // Funktionen
@@ -70,6 +76,9 @@ public:
   // angeschlossen ist.
   void port(byte Port);
 
+  // Pullup oder Pulldown einstellen
+  void pullUpDown(byte PullUpDown);
+  
   // Entprellzeit einstellen
   void debounceTime(int Time);
 
@@ -84,14 +93,14 @@ public:
 
   // Initialisierung
   void begin();
-  void begin(byte Port);
-  void begin(byte Port, int HoldTime);
-  void begin(byte Port, int HoldTime, int HoldIntervalTime);
-  void begin(byte Port, int HoldTime, int HoldIntervalTime, int DebounceTimeervalTime);
-  void begin(byte Port, void (*PushbuttonCallBack)(byte));
-  void begin(byte Port, void (*PushbuttonCallBack)(byte), int HoldTime);
-  void begin(byte Port, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime);
-  void begin(byte Port, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime, int DebounceTimeervalTime);
+  void begin(byte Port, byte PullUpDown);
+  void begin(byte Port, byte PullUpDown, int HoldTime);
+  void begin(byte Port, byte PullUpDown, int HoldTime, int HoldIntervalTime);
+  void begin(byte Port, byte PullUpDown, int HoldTime, int HoldIntervalTime, int DebounceTimeervalTime);
+  void begin(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte));
+  void begin(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte), int HoldTime);
+  void begin(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime);
+  void begin(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime, int DebounceTimeervalTime);
 
   // Überprüft den zustand des Tasters
   byte update();
