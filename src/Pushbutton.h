@@ -96,11 +96,11 @@ public:
   void begin(byte Port, byte PullUpDown);
   void begin(byte Port, byte PullUpDown, int HoldTime);
   void begin(byte Port, byte PullUpDown, int HoldTime, int HoldIntervalTime);
-  void begin(byte Port, byte PullUpDown, int HoldTime, int HoldIntervalTime, int DebounceTimeervalTime);
+  void begin(byte Port, byte PullUpDown, int HoldTime, int HoldIntervalTime, int DebounceTime);
   void begin(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte));
   void begin(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte), int HoldTime);
   void begin(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime);
-  void begin(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime, int DebounceTimeervalTime);
+  void begin(byte Port, byte PullUpDown, void (*PushbuttonCallBack)(byte), int HoldTime, int HoldIntervalTime, int DebounceTime);
 
   // Überprüft den zustand des Tasters
   byte update();
