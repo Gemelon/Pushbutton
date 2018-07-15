@@ -2,30 +2,30 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-Pushbutton			KEYWORD1
+Pushbutton	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-port				KEYWORD2
-debounceTime		KEYWORD2
-holdTime			KEYWORD2
-holdIntervalTime		KEYWORD2
+port	KEYWORD2
+debounceTime	KEYWORD2
+holdTime	KEYWORD2
+holdIntervalTime	KEYWORD2
 pushbuttoncallBack	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
 #######################################
 
-Debouncetime		LITERAL1
-Holdtime			LITERAL1
-HoldIntervaltime		LITERAL1
+Debouncetime	LITERAL1
+Holdtime	LITERAL1
+HoldIntervaltime	LITERAL1
 
 ButtonStateNothing	LITERAL1
-ButtonStateTouch		LITERAL1
-ButtonStateHold		LITERAL1
+ButtonStateTouch	LITERAL1
+ButtonStateHold	LITERAL1
 ButtonStateInterval	LITERAL1
 
-PullUp			LITERAL1
-PullDown			LITERAL1
+PullUp	LITERAL1
+PullDown	LITERAL1
